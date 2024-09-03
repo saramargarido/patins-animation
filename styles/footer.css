@@ -7,6 +7,17 @@ footer {
   align-items: center;
   justify-content: space-between;
 
+  @media (width < 80rem) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3rem;
+
+    & nav {
+      flex-direction: column;
+    }
+  }
+
   & .logo {
     display: flex;
     align-items: center;
