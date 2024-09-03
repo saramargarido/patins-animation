@@ -9,6 +9,13 @@ section.hero {
   justify-content: space-between;
   overflow: hidden;
 
+  @media (width < 80rem) {
+    flex-direction: column-reverse;
+    padding-top: 0;
+    padding: 1rem 1.5rem 2rem;
+    gap: 2rem;
+  }
+
   & h1 {
     max-width: 40rem;
   }
@@ -19,19 +26,22 @@ section.hero {
     height: 5rem;
     width: min-content; 
     vertical-align: bottom;
+    @media (width < 80rem) {
+      height: 2.5rem;
+    }
+    & span:nth-child(1),
+    & span:nth-child(4)
+    {
+      color: var(--snitap-sky-mid);
+    }
+    & span:nth-child(2) {
+      color: var(--snitap-joy-mid);
+    }
+    & span:nth-child(3) {
+      color: var(--snitap-leaf-mid);
+    }
   }
   
-  & h1 span:nth-child(1),
-  & h1 span:nth-child(4)
-  {
-    color: var(--snitap-sky-mid);
-  }
-  & h1 span:nth-child(2) {
-    color: var(--snitap-joy-mid);
-  }
-  & h1 span:nth-child(3) {
-    color: var(--snitap-leaf-mid);
-  }
 
   & h1 span {
     display: block;
@@ -44,11 +54,15 @@ section.hero {
     gap: 2rem;
     margin-top: 3rem;
     text-transform: uppercase;
+    @media (width < 80rem) {
+      flex-direction: column-reverse;
+    }
 
     & .button {
       display: flex;
       align-items: center;
       gap: 0.75rem;
+      max-width: fit-content;
 
       border-radius: 5rem;
 
@@ -84,8 +98,12 @@ section.hero {
   & > div:nth-child(2) {
     display: block;
     width: 100%;
-    max-width: 30.5rem;
-    height: 30.5rem;
+    aspect-ratio: 1/1;
+
+    @media (width >= 80rem) {
+      max-width: 30.5rem;
+      height: 30.5rem;
+    }
 
     & .content {
       width: 100%;
@@ -113,7 +131,7 @@ section.hero {
     }
 
     & img[src*="stars-1"] {
-      max-width: 5.5rem;
+      max-width: 19%;
       top: 30%;
       z-index: 0;
       opacity: 0;
@@ -121,7 +139,7 @@ section.hero {
       animation: slideIn 2s 800ms ease both, appear 100ms 800ms both;
     }
     & img[src*="stars-2"] {
-      max-width: 2.5rem;
+      max-width: 8%;
       right: 0;
       bottom: 35%;
       transform: translateX(400%);

@@ -22,10 +22,16 @@
   --text-base: 1rem;
   --text-lg: 2.5rem;
   --text-xl: 4rem;
+
+  @media (width < 80rem) {
+    --text-lg: 1.5rem;
+    --text-xl: 2rem;
+  }
 }
 
 html, button {
   font: 500 1rem/1.5 var(--ff-base);
+  overflow-x: hidden;
 }
 
 h1, h2 {

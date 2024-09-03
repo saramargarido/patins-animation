@@ -3,7 +3,9 @@ header.top {
   width: 100%;
   padding: 1.25rem 2rem;
   margin-inline: auto;
-
+  @media (width < 80rem) {
+    padding: 1.5rem 1.5rem 0.75rem;
+  }
   display: flex;
   align-items: center;
   justify-content: space-between;

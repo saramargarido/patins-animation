@@ -3,7 +3,9 @@
   max-width: 80rem;
   padding: 2.5rem 2rem;
   margin-inline: auto;
-
+  @media (width < 80rem) {
+    padding: 1.5rem;
+  }
   & header {
     text-align: center;
   }
@@ -20,12 +22,17 @@
 
   & .content {
     margin-top: 2rem;
+    gap: 2.5rem;
     display: grid;
     grid-template-areas:
     "A B B"
     "C C D";
-
-    gap: 2.5rem;
+    @media (width < 80rem) {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
   }
 
   & figure {
